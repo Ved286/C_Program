@@ -1,0 +1,43 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	int a[n],k=0,i,l,sum=0,j;
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		if(a[i]==1)
+		{
+			j=i;
+			break;
+		}
+	}
+	for(i=j;i<n;i++)
+	{
+		if(a[i]!=1)
+		{
+			k=i;
+			break;
+		}
+	}
+	if(k!=n)
+	{
+	for(i=k;i<n;i++)
+	{
+		if(a[i]==1)
+		{
+			break;
+		}
+	}
+	}
+	else
+	printf("true");
+	if(a[i]==1)
+	printf("false");
+	else
+	printf("true");
+}

@@ -1,0 +1,77 @@
+#include<stdio.h>
+void main()
+{
+	int n,k;
+	scanf("%d",&n);
+	int a[n],c[n],i,j=0,b=0;
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+		c[i]=a[i];
+	}
+	scanf("%d",&k);
+	for(i=0;i<n;i++)
+	{
+		if(i==0)
+		{
+			if(a[i]==0&&a[i+1]!=1)
+			{
+			j++;
+			a[i]=1;
+			}
+		}
+		if(i>0&&i<n-1)
+		{
+		if(a[i]==0&&a[i+1]!=1&&a[i-1]!=1)
+		{
+		j++;
+		a[i]=1;
+		}
+		}
+		if(i==n-1)
+		{
+			if(a[i]==0&&a[i-1]!=1)		
+			{
+			j++;
+			a[i]=1;
+			}
+			
+		}
+		if(j==k)
+            break;
+            
+ 	}
+   	for(i=0;i<n;i++)
+	{
+		if(i>0&&i<n-1)
+		{
+		if(c[i]==0&&c[i+1]!=1&&c[i-1]!=1)
+		{
+		b++;
+		c[i]=1;
+		}
+		}
+		if(i==0)
+		{
+			if(c[i]==0&&c[i+1]!=1)
+			{
+			b++;
+			c[i]=1;
+			}
+		}
+		if(i==n-1)
+		{
+			if(c[i]==0&&c[i-1]!=1)		
+			{
+			b++;
+			c[i]=1;
+			}
+		}
+		if(b==k)
+        break;
+	}	
+		if(j==k||b==k)
+		printf("true");
+		else
+		printf("false");
+}
